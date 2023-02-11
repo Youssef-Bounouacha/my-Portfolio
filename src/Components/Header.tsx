@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { SocialIcon } from 'react-social-icons'
 import { useTheme } from 'next-themes'
+import { motion } from 'framer-motion';
 type Props = {}
 
 export default function Header({ }: Props) {
@@ -12,14 +13,23 @@ export default function Header({ }: Props) {
     const { theme, setTheme } = useTheme()
 
     return (
-        <header>
+        <header className='sticky top-0 flex items-start'>
             <nav className="w-full bg- shadow">
                 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-                            <a href="#">
-                                <h2 className="text-2xl text-gray font-bold">Youssef</h2>
+                            <a href="/">
+                                <motion.h2
+                                    initial={{ x: -500, opacity: 0, scale: 0.5, }}
+                                    animate={{ x: 0, opacity: 1, scale: 1, }}
+                                    transition={{ duration: 1.5, }}
+                                    className="text-2xl text-gray font-bold">
+                                    Youssef
+                                </motion.h2>
                             </a>
+
+
+
                             <div className="md:hidden">
                                 <button
                                     className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -63,7 +73,16 @@ export default function Header({ }: Props) {
                             className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? 'block' : 'hidden'
                                 }`}
                         >
-                            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                            <motion.ul
+                                initial={{ x: 1000, opacity: 0, scale: 0.5, }}
+                                animate={{ x: 0, opacity: 1, scale: 1, }}
+                                transition={{ duration: 1.5, }}
+                                className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                                <button
+                                    onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+                                    className="px-1 py-2 text-white bg-black rounded dark:bg-white dark:text-black">
+                                    Dark Mode
+                                </button>
                                 <li className="text-gray">
                                     <Link href="/">
                                         About
@@ -94,28 +113,20 @@ export default function Header({ }: Props) {
                                     <SocialIcon url="https://www.linkedin.com/in/youssef-bounouacha-b90981202" fgColor='gray' bgColor='transparent' />
                                     <SocialIcon url="https://github.com/Youssef-Bounouacha" fgColor='gray' bgColor='transparent' />
                                 </div>
-                                <button
-                                    onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                                    className="px-4 py-2 text-white bg-black rounded dark:bg-white dark:text-black">
-                                    Dark Toggle
-                                </button>
-                            </ul>
-
-
-
+                            </motion.ul>
                         </div>
                     </div>
                 </div>
             </nav>
-
-
-
-            <div>
-
-            </div>
         </header>
 
 
     )
 }
+
+
+
+
+
+
 
