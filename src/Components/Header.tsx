@@ -66,7 +66,7 @@ export default function Header({ }: Props) {
                                     initial={{ x: -500, opacity: 0, scale: 0.5, }}
                                     animate={{ x: 0, opacity: 1, scale: 1, }}
                                     transition={{ duration: 1.5, }}
-                                    className="text-2xl text-gray font-bold">
+                                    className="text-2xl hover:text-red-900 text-gray font-bold">
                                     Youssef
                                 </motion.h2>
                             </a>
@@ -151,8 +151,8 @@ export default function Header({ }: Props) {
                                 </li>
                                 {/*Socials Icons*/}
                                 <div className='flex flex-row items-center'>
-                                    <SocialIcon url="https://www.linkedin.com/in/youssef-bounouacha-b90981202" fgColor='gray' bgColor='transparent' />
-                                    <SocialIcon url="https://github.com/Youssef-Bounouacha" fgColor='gray' bgColor='transparent' />
+                                    <SocialIcon url="https://www.linkedin.com/in/youssef-bounouacha-b90981202" fgColor='gray' bgColor='transparent' className="p-1 rounded-lg hover:ring-2 ring-red-900" />
+                                    <SocialIcon url="https://github.com/Youssef-Bounouacha" fgColor='gray' bgColor='transparent' className="p-1 rounded-lg hover:ring-2 ring-red-900" />
                                 </div>
                             </motion.ul>
                         </div>
