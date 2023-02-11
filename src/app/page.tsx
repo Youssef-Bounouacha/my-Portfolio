@@ -1,32 +1,36 @@
+"use client";
 import { Inter } from '@next/font/google'
 import Header from '@/Components/Header'
+import { ThemeProvider } from 'next-themes'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div>
-      {/*Header*/}
-      <Header />
+    <ThemeProvider attribute='class'>
+      <div>
+        {/*Header*/}
+        <Header />
 
-      {/*Hero*/}
-
-
-      {/*About*/}
+        {/*Hero*/}
 
 
-      {/*Experience*/}
+        {/*About*/}
 
 
-      {/*Skills*/}
+        {/*Experience*/}
 
 
-      {/*Project*/}
+        {/*Skills*/}
 
 
-      {/*Contact*/}
+        {/*Project*/}
 
 
-    </div>
+        {/*Contact*/}
+
+
+      </div>
+    </ThemeProvider>
   )
 }
