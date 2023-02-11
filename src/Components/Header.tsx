@@ -48,8 +48,7 @@ export default function Header({ }: Props) {
                 <MoonStars
                     role='button'
                     onClick={() => { setTheme('dark'); play({ id: 'off' }) }}
-                    className='bg-gray rounded-lg p-1 dark:gray flex items-center justify-center hover:ring-2
-                    ring-red-900 transition-all duration-300 focus:outline-none'
+                    className='bg-gray rounded-lg p-1 dark:gray flex items-center justify-center hover:ring-2  ring-red-900 transition-all duration-300 focus:outline-none'
                 />
             )
         }
@@ -124,7 +123,7 @@ export default function Header({ }: Props) {
                                     className="px-1 py-2 text-white bg-black rounded dark:bg-white dark:text-black">
                                     Dark Mode
                                 </button> */}
-                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900">
+                                <li className="text-gray p-1 rounded-lg flex hover:text-red-900 hover:ring-2 ring-red-900 ring-" >
                                     <Link href="/">
                                         About
                                     </Link>
