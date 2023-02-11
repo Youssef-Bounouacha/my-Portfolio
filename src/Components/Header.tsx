@@ -118,7 +118,7 @@ export default function Header({ }: Props) {
                                 animate={{ x: 0, opacity: 1, scale: 1, }}
                                 transition={{ duration: 1.5, }}
                                 className="items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
-                                     {renderThemeChanger()}
+                                {renderThemeChanger()}
                                 {/* <button
                                     onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                                     className="px-1 py-2 text-white bg-black rounded dark:bg-white dark:text-black">
@@ -151,8 +151,8 @@ export default function Header({ }: Props) {
                                 </li>
                                 {/*Socials Icons*/}
                                 <div className='flex flex-row items-center'>
-                                    <SocialIcon url="https://www.linkedin.com/in/youssef-bounouacha-b90981202" fgColor='gray' bgColor='transparent'/>
-                                    <SocialIcon url="https://github.com/Youssef-Bounouacha" fgColor='gray' bgColor='transparent'/>
+                                    <SocialIcon url="https://www.linkedin.com/in/youssef-bounouacha-b90981202" fgColor='gray' bgColor='transparent' />
+                                    <SocialIcon url="https://github.com/Youssef-Bounouacha" fgColor='gray' bgColor='transparent' />
                                 </div>
                             </motion.ul>
                         </div>
