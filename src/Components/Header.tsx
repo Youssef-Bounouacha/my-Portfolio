@@ -39,7 +39,7 @@ export default function Header({ }: Props) {
                 <SunHigh
                     role='button'
                     onClick={() => { setTheme('light'); play({ id: 'on' }) }}
-                    className='bg-blue-100 rounded-lg p-1 dark:bg-orange-300 flex items-center justify-center hover:ring-2 ring-orange-300 transition-all duration-300 focus:outline-none'
+                    className='bg-gray rounded-lg p-1 dark:bg-gray flex items-center justify-center hover:ring-2 ring-red-900 transition-all duration-300 focus:outline-none'
                 />
 
             )
@@ -48,8 +48,8 @@ export default function Header({ }: Props) {
                 <MoonStars
                     role='button'
                     onClick={() => { setTheme('dark'); play({ id: 'off' }) }}
-                    className='bg-[#88ccca] rounded-lg p-1 dark:bg-slate-800 flex items-center justify-center hover:ring-2
-                    ring-[#88ccca] transition-all duration-300 focus:outline-none'
+                    className='bg-gray rounded-lg p-1 dark:gray flex items-center justify-center hover:ring-2
+                    ring-red-900 transition-all duration-300 focus:outline-none'
                 />
             )
         }
@@ -117,42 +117,42 @@ export default function Header({ }: Props) {
                                 initial={{ x: 1000, opacity: 0, scale: 0.5, }}
                                 animate={{ x: 0, opacity: 1, scale: 1, }}
                                 transition={{ duration: 1.5, }}
-                                className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+                                className="items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
                                      {renderThemeChanger()}
                                 {/* <button
                                     onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                                     className="px-1 py-2 text-white bg-black rounded dark:bg-white dark:text-black">
                                     Dark Mode
                                 </button> */}
-                                <li className="text-gray">
+                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900">
                                     <Link href="/">
                                         About
                                     </Link>
                                 </li>
-                                <li className="text-gray">
+                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
                                     <Link href="/blogs">
                                         Experience
                                     </Link>
                                 </li>
-                                <li className="text-gray">
+                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
                                     <Link href="/about">
                                         Skills
                                     </Link>
                                 </li>
-                                <li className="text-gray">
+                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
                                     <Link href="/contact">
                                         Project
                                     </Link>
                                 </li>
-                                <li className="text-gray">
+                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900">
                                     <Link href="/contact">
                                         Contact
                                     </Link>
                                 </li>
                                 {/*Socials Icons*/}
                                 <div className='flex flex-row items-center'>
-                                    <SocialIcon url="https://www.linkedin.com/in/youssef-bounouacha-b90981202" fgColor='gray' bgColor='transparent' />
-                                    <SocialIcon url="https://github.com/Youssef-Bounouacha" fgColor='gray' bgColor='transparent' />
+                                    <SocialIcon url="https://www.linkedin.com/in/youssef-bounouacha-b90981202" fgColor='gray' bgColor='transparent'/>
+                                    <SocialIcon url="https://github.com/Youssef-Bounouacha" fgColor='gray' bgColor='transparent'/>
                                 </div>
                             </motion.ul>
                         </div>
