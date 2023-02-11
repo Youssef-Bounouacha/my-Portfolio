@@ -1,16 +1,59 @@
 "use client";
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link';
-import { useState } from 'react';
 import { SocialIcon } from 'react-social-icons'
-import { useTheme } from 'next-themes'
+import {
+    BrandGithub,
+    BrandLinkedin,
+    SunHigh,
+    MoonStars,
+    MailForward,
+} from 'tabler-icons-react';
+import { useTheme } from 'next-themes';
+import useSound from 'use-sound';
 import { motion } from 'framer-motion';
 type Props = {}
 
 export default function Header({ }: Props) {
 
     const [navbar, setNavbar] = useState(false);
-    const { theme, setTheme } = useTheme()
+    const { systemTheme, theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+    const [play] = useSound('/audios/lightswitch.mp3', {
+        volume: 0.4,
+        sprite: {
+            on: [0, 300],
+            off: [300, 500],
+        }
+    })
+
+    useEffect(() => {
+        setMounted(true);
+    }, [])
+
+    const renderThemeChanger = () => {
+        if (!mounted) return null;
+        const currentTheme = theme === 'system' ? systemTheme : theme;
+        if (currentTheme === 'dark') {
+            return (
+                <SunHigh
+                    role='button'
+                    onClick={() => { setTheme('light'); play({ id: 'on' }) }}
+                    className='bg-blue-100 rounded-lg p-1 dark:bg-orange-300 flex items-center justify-center hover:ring-2 ring-orange-300 transition-all duration-300 focus:outline-none'
+                />
+
+            )
+        } else {
+            return (
+                <MoonStars
+                    role='button'
+                    onClick={() => { setTheme('dark'); play({ id: 'off' }) }}
+                    className='bg-[#88ccca] rounded-lg p-1 dark:bg-slate-800 flex items-center justify-center hover:ring-2
+                    ring-[#88ccca] transition-all duration-300 focus:outline-none'
+                />
+            )
+        }
+    }
 
     return (
         <header className='sticky top-0 flex items-start'>
@@ -27,9 +70,6 @@ export default function Header({ }: Props) {
                                     Youssef
                                 </motion.h2>
                             </a>
-
-
-
                             <div className="md:hidden">
                                 <button
                                     className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
@@ -78,11 +118,12 @@ export default function Header({ }: Props) {
                                 animate={{ x: 0, opacity: 1, scale: 1, }}
                                 transition={{ duration: 1.5, }}
                                 className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                                <button
+                                     {renderThemeChanger()}
+                                {/* <button
                                     onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
                                     className="px-1 py-2 text-white bg-black rounded dark:bg-white dark:text-black">
                                     Dark Mode
-                                </button>
+                                </button> */}
                                 <li className="text-gray">
                                     <Link href="/">
                                         About
