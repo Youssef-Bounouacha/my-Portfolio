@@ -30,6 +30,9 @@ export default function Header({ }: Props) {
     useEffect(() => {
         setMounted(true);
     }, [])
+    
+    
+    const bgColor = theme === 'light' ? 'bg-white' : 'bg-gray';
 
     const renderThemeChanger = () => {
         if (!mounted) return null;
@@ -39,7 +42,7 @@ export default function Header({ }: Props) {
                 <SunHigh
                     role='button'
                     onClick={() => { setTheme('light'); play({ id: 'on' }) }}
-                    className='bg-gray rounded-lg p-1 dark:bg-gray flex items-center justify-center hover:ring-2 ring-red-900 transition-all duration-300 focus:outline-none'
+                    className='bg-gray rounded-lg p-1 dark:black flex items-center justify-center hover:ring-2 ring-red-900 transition-all duration-300 focus:outline-none'
                 />
 
             )
@@ -48,15 +51,15 @@ export default function Header({ }: Props) {
                 <MoonStars
                     role='button'
                     onClick={() => { setTheme('dark'); play({ id: 'off' }) }}
-                    className='bg-gray rounded-lg p-1 dark:gray flex items-center justify-center hover:ring-2  ring-red-900 transition-all duration-300 focus:outline-none'
+                    className='bg-gray rounded-lg p-1 dark:black flex items-center justify-center hover:ring-2  ring-red-900 transition-all duration-300 focus:outline-none'
                 />
             )
         }
     }
 
     return (
-        <header className='sticky top-0 flex items-start'>
-            <nav className="w-full bg- shadow">
+        <header className='sticky top-0 flex items-start fixed z-10'>
+            <nav className={`w-full ${bgColor} shadow`}>
                 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -71,7 +74,7 @@ export default function Header({ }: Props) {
                             </a>
                             <div className="md:hidden">
                                 <button
-                                    className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
+                                    className="p-2 text-gray-700  rounded-md outline-none focus:border-gray-400 focus:border"
                                     onClick={() => setNavbar(!navbar)}
                                 >
                                     {navbar ? (
@@ -118,12 +121,7 @@ export default function Header({ }: Props) {
                                 transition={{ duration: 1.5, }}
                                 className="items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
                                 {renderThemeChanger()}
-                                {/* <button
-                                    onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-                                    className="px-1 py-2 text-white bg-black rounded dark:bg-white dark:text-black">
-                                    Dark Mode
-                                </button> */}
-                                <li className="text-gray p-1 rounded-lg flex hover:text-red-900 hover:ring-2 ring-red-900 ring-" >
+                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900" >
                                     <Link href="/">
                                         About
                                     </Link>
