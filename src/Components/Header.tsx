@@ -30,8 +30,8 @@ export default function Header({ }: Props) {
     useEffect(() => {
         setMounted(true);
     }, [])
-    
-    
+
+
     const bgColor = theme === 'light' ? 'bg-white' : 'bg-gray';
 
     const renderThemeChanger = () => {
@@ -68,7 +68,7 @@ export default function Header({ }: Props) {
                                     initial={{ x: -500, opacity: 0, scale: 0.5, }}
                                     animate={{ x: 0, opacity: 1, scale: 1, }}
                                     transition={{ duration: 1.5, }}
-                                    className="text-2xl hover:text-red-900 text-gray font-bold">
+                                    className="text-2xl hover:text-red-900 text-gray font-bold font-signature">
                                     Youssef
                                 </motion.h2>
                             </a>
