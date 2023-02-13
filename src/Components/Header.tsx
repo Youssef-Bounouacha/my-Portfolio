@@ -19,7 +19,7 @@ export default function Header({ }: Props) {
     const [navbar, setNavbar] = useState(false);
     const { systemTheme, theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
-    const [play] = useSound('/audios/lightswitch.mp3', {
+    const [play] = useSound('/audio/lightswitch.mp3', {
         volume: 0.4,
         sprite: {
             on: [0, 300],
@@ -32,7 +32,7 @@ export default function Header({ }: Props) {
     }, [])
 
 
-    const bgColor = theme === 'light' ? 'bg-white' : 'bg-gray';
+    const bgColor = theme === 'light' ? 'bg-white' : 'bg-black';
 
     const renderThemeChanger = () => {
         if (!mounted) return null;
@@ -58,7 +58,7 @@ export default function Header({ }: Props) {
     }
 
     return (
-        <header className='sticky top-0 flex items-start fixed z-10'>
+        <header className='sticky top-0 flex items-start fixed z-20'>
             <nav className={`w-full ${bgColor} shadow`}>
                 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
@@ -68,7 +68,7 @@ export default function Header({ }: Props) {
                                     initial={{ x: -500, opacity: 0, scale: 0.5, }}
                                     animate={{ x: 0, opacity: 1, scale: 1, }}
                                     transition={{ duration: 1.5, }}
-                                    className="text-2xl hover:text-red-900 text-gray font-bold font-signature">
+                                    className="text-3xl hover:text-red-900 text-gray font-bold font-signature">
                                     Youssef
                                 </motion.h2>
                             </a>
@@ -122,23 +122,23 @@ export default function Header({ }: Props) {
                                 className="items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
                                 {renderThemeChanger()}
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900" >
-                                    <Link href="/">
+                                    <Link href="/about">
                                         About
                                     </Link>
                                 </li>
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
-                                    <Link href="/blogs">
+                                    <Link href="/experience">
                                         Experience
                                     </Link>
                                 </li>
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
-                                    <Link href="/about">
+                                    <Link href="/skills">
                                         Skills
                                     </Link>
                                 </li>
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
-                                    <Link href="/contact">
-                                        Project
+                                    <Link href="/projects">
+                                        Projects
                                     </Link>
                                 </li>
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900">
