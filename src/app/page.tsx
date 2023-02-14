@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <ThemeProvider attribute='class'>
-      <div className='bg-[#d4d4d4] dark:bg-[#0f0f0f]  h-screen snap-y snap-mandatory overflow-scroll z-0'>
+      <div className='bg-[#f0f0f0] dark:bg-[#0f0f0f]  h-screen snap-y snap-mandatory overflow-scroll z-0'>
         {/*Header*/}
         <Header />
 
@@ -28,7 +28,7 @@ export default function Home() {
         </section>
 
         {/*Skills*/}
-        <section id='skills' className='snap-center select-none'>
+        <section id='skills' className='snap-start select-none'>
           <Skills />
         </section>
         {/*Project*/}
