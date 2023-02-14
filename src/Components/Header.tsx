@@ -120,17 +120,12 @@ export default function Header({ }: Props) {
                                 className="px-40 text-center items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
                                 {renderThemeChanger()}
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900" >
-                                    <Link href="/about">
+                                    <Link href="#about">
                                         About
                                     </Link>
                                 </li>
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
-                                    <Link href="/experience">
-                                        Experience
-                                    </Link>
-                                </li>
-                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
-                                    <Link href="/skills">
+                                    <Link href="#skills">
                                         Skills
                                     </Link>
                                 </li>
