@@ -20,9 +20,9 @@ export default function About({ }: Props) {
                     opacity: 1,
                 }}
                 src='https://avatars.githubusercontent.com/u/51406125?v=4'
-                className='mt-24 md:mt-0 md:mb-20 flex-shrink-0 w-64 h-64 rounded-full object-top object-cover md:rounded-t-xl md:rounded-b-xl md:h-[320px] md:w-64 '
+                className='mt-24 md:mt-0 md:mb-18 flex-shrink-0 w-64 h-64 rounded-full object-top object-cover md:rounded-t-xl md:rounded-b-xl md:h-[320px] md:w-64 '
             />
-            <div className='flex flex-col px-0 -mt-3 md:mt-16 md:px-5 '>
+            <div className='flex flex-col px-0 md:mb-0 -mt-3 md:mt-16 md:px-5 '>
                 <h4 className='uppercase text-xl md:text-2xl font-semibold md:mb-2'> hellooooooo <span className='text-red-900'>thereee</span></h4>
                 <p className='md:text-base text-xs font-semibold leading-relaxed tracking-wide text-justify'>
                     Hi, my name is Youssef Bounouacha and I am a 24-year-old software engineer from Tangier, Morocco.
@@ -35,7 +35,7 @@ export default function About({ }: Props) {
                     I can bring a positive and impactful contribution to any organization I work with.
                     Thank you for considering my profile.
                 </p>
-                <button className='group w-fit px-6 py-3 my-2 mx-auto font-semibold hover:ring-2 ring-red-900 flex items-center uppercase rounded-md bg-gradient-to-r from-red-400 to-red-900'>
+                <button className='group w-fit px-6 py-3 my-0 mx-auto font-semibold hover:ring-2 ring-red-900 flex items-center uppercase rounded-md bg-gradient-to-r from-red-400 to-red-900'>
                     <a href='pdf/YOUSSEF_BOUNOUACHA_CV.pdf' download>my resume</a>
                 </button>
             </div>
