@@ -32,8 +32,6 @@ export default function Header({ }: Props) {
     }, [])
 
 
-    const bgColor = theme === 'light' ? 'bg-white' : 'bg-black';
-
     const renderThemeChanger = () => {
         if (!mounted) return null;
         const currentTheme = theme === 'system' ? systemTheme : theme;
@@ -42,7 +40,7 @@ export default function Header({ }: Props) {
                 <SunHigh
                     role='button'
                     onClick={() => { setTheme('light'); play({ id: 'on' }) }}
-                    className='bg-gray rounded-lg p-1 dark:black flex items-center justify-center hover:ring-2 ring-red-900 transition-all duration-300 focus:outline-none'
+                    className='bg-gray rounded-lg p-1 dark:white flex items-center justify-center hover:ring-2 ring-red-900 transition-all duration-300 focus:outline-none'
                 />
 
             )
@@ -59,7 +57,7 @@ export default function Header({ }: Props) {
 
     return (
         <header className='sticky top-0 flex items-start fixed z-20'>
-            <nav className={`w-full ${bgColor} shadow`}>
+            <nav className='w-full dark:bg-black shadow'>
                 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -119,7 +117,7 @@ export default function Header({ }: Props) {
                                 initial={{ x: 1000, opacity: 0, scale: 0.5, }}
                                 animate={{ x: 0, opacity: 1, scale: 1, }}
                                 transition={{ duration: 1.5, }}
-                                className="items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
+                                className="px-40 text-center items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
                                 {renderThemeChanger()}
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900" >
                                     <Link href="/about">
