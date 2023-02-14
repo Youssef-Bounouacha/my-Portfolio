@@ -57,7 +57,7 @@ export default function Header({ }: Props) {
 
     return (
         <header className='sticky top-0 flex items-start fixed z-20'>
-            <nav className='w-full dark:bg-black shadow'>
+            <nav className='w-full bg-white dark:bg-black shadow'>
                 <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                     <div>
                         <div className="flex items-center justify-between py-3 md:py-5 md:block">
