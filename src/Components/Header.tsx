@@ -3,11 +3,8 @@ import React, { useState, useEffect } from 'react'
 import Link from 'next/link';
 import { SocialIcon } from 'react-social-icons'
 import {
-    BrandGithub,
-    BrandLinkedin,
     SunHigh,
     MoonStars,
-    MailForward,
 } from 'tabler-icons-react';
 import { useTheme } from 'next-themes';
 import useSound from 'use-sound';
@@ -120,29 +117,29 @@ export default function Header({ }: Props) {
                                 className="px-40 text-center items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
                                 {renderThemeChanger()}
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900" >
-                                    <Link href="#about">
+                                    <a href="#about">
                                         About
-                                    </Link>
+                                    </a>
                                 </li>
-                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
-                                    <Link href="#skills">
+                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900 ">
+                                    <a href="#skills">
                                         Skills
-                                    </Link>
-                                </li>
-                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900  rounded-lg">
-                                    <Link href="/projects">
-                                        Projects
-                                    </Link>
+                                    </a>
                                 </li>
                                 <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900">
-                                    <Link href="/contact">
+                                    <a href="#projects">
+                                        Projects
+                                    </a>
+                                </li>
+                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900">
+                                    <a href="#contact">
                                         Contact
-                                    </Link>
+                                    </a>
                                 </li>
                                 {/*Socials Icons*/}
                                 <div className='flex flex-row items-center'>
-                                    <SocialIcon url="https://www.linkedin.com/in/youssef-bounouacha-b90981202" fgColor='gray' bgColor='transparent' className="p-1 rounded-lg hover:ring-2 ring-red-900" />
-                                    <SocialIcon url="https://github.com/Youssef-Bounouacha" fgColor='gray' bgColor='transparent' className="p-1 rounded-lg hover:ring-2 ring-red-900" />
+                                    <SocialIcon url="https://www.linkedin.com/in/youssef-bounouacha-b90981202" target="_blank" rel="noopener noreferrer" fgColor='gray' bgColor='transparent' className="p-1 rounded-lg hover:ring-2 ring-red-900" />
+                                    <SocialIcon url="https://github.com/Youssef-Bounouacha" target="_blank" rel="noopener noreferrer" fgColor='gray' bgColor='transparent' className="p-1 rounded-lg hover:ring-2 ring-red-900" />
                                 </div>
                             </motion.ul>
                         </div>
