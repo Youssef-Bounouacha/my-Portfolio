@@ -8,5 +8,7 @@ module.exports = {
       signature: ["Great vibes"]
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }

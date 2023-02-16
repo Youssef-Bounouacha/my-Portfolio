@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <ThemeProvider attribute='class'>
-      <div className='bg-[#f0f0f0] dark:bg-[#0f0f0f]  h-screen snap-y snap-mandatory overflow-scroll z-0'>
+      <div className='bg-[#f0f0f0] dark:bg-[#0f0f0f]  h-screen snap-y snap-mandatory overflow-scroll z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-red-900/80'>
         {/*Header*/}
         <Header />
 

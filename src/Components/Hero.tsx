@@ -15,11 +15,11 @@ export default function Hero({ }: Props) {
 
         <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
             <BackgroundCercles />
-            <h1 className='p-5 text-2xl font-bold text-6xl z-10'>
+            <h1 className='p-5 font-bold text-6xl z-10'>
                 <span className='text-gray'>Hi there!🤗</span><br />
                 <span className='text-gray'>I'm <span className='font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-900'>Youssef Bounouacha</span> </span>
             </h1>
-            <h1 className='p-5 text-2xl font-bold text-6xl z-10'>
+            <h1 className='p-5 font-bold text-6xl z-10'>
                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-900'>{text}</span>
                 <Cursor cursorColor='red-900' />
             </h1>
