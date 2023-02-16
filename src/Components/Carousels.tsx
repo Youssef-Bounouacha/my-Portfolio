@@ -3,6 +3,7 @@ import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { createStyles, Paper, Text, Title, Button, useMantineTheme } from '@mantine/core';
 import Link from 'next/link';
+import ComingSoon from './ComingSoon';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -11,6 +12,7 @@ const useStyles = createStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
+    backgroundColor: theme.colors.dark[7],
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   },
@@ -25,10 +27,9 @@ const useStyles = createStyles((theme) => ({
   },
 
   category: {
-    color: theme.colors.black,
+    color: theme.white,
     fontWeight: 600,
     textTransform: 'uppercase',
-    backgroundColor: theme.colors.transparent,
   },
 }));
 
@@ -46,7 +47,7 @@ function Card({ image, title, category, href }: CardProps) {
     e.preventDefault();
 
     // check if href is a local route or an external website
-    if (href.startsWith("/")) {
+    if (href.startsWith("#")) {
       // navigate to local route
       window.location.href = href;
     } else {
@@ -70,11 +71,11 @@ function Card({ image, title, category, href }: CardProps) {
           {title}
         </Title>
       </div>
-      <Link href={href}>
+      <a href={href}>
         <button className='group w-fit px-6 py-3 my-0 text-white mx-auto font-semibold hover:ring-2 ring-white flex items-center uppercase rounded-md bg-gradient-to-r from-red-300 to-red-900'>
           View Project
         </button>
-      </Link>
+      </a>
     </Paper>
   );
 }
@@ -92,35 +93,21 @@ const data = [
       'images/man-developing-website-on-desk.png',
     title: 'Coming Soon..',
     category: 'Coding',
-    href: '',
+    href: '#comingSoon',
   },
   {
     image:
       'images/man-developing-website-on-desk.png',
     title: 'Coming Soon..',
     category: 'Coding',
-    href: '',
+    href: 'hmm',
   },
   {
     image:
       'images/man-developing-website-on-desk.png',
     title: 'Coming Soon..',
     category: 'Coding',
-    href: '',
-  },
-  {
-    image:
-      'images/man-developing-website-on-desk.png',
-    title: 'Coming Soon..',
-    category: 'Coding',
-    href: '',
-  },
-  {
-    image:
-      'images/man-developing-website-on-desk.png',
-    title: 'Coming Soon...',
-    category: 'Coding',
-    href: '',
+    href: 'hmm',
   },
 ];
 

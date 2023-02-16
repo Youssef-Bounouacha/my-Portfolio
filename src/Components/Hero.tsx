@@ -21,7 +21,7 @@ export default function Hero({ }: Props) {
             </h1>
             <h1 className='p-5 font-bold text-6xl z-10'>
                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-900'>{text}</span>
-                <Cursor cursorColor='red-900' />
+                <Cursor />
             </h1>
         </div>
 
