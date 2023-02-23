@@ -3,7 +3,7 @@ import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
 import { createStyles, Paper, Text, Title, Button, useMantineTheme } from '@mantine/core';
 import Link from 'next/link';
-import ComingSoon from './ComingSoon';
+import ComingSoon from '../ComingSoon';
 
 const useStyles = createStyles((theme) => ({
   card: {

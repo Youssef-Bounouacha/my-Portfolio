@@ -1,6 +1,6 @@
 import React from 'react'
 //Components-------------------------------------------------------
-import Carousels from './Carousels'
+import Carousels from './SubComponents/Carousels'
 
 type Props = {}
 

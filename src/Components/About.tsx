@@ -36,7 +36,7 @@ export default function About({ }: Props) {
                     Thank you for considering my profile.
                 </p>
                 <button className='group w-fit px-6 py-3 my-0 mx-auto font-semibold hover:ring-2 ring-red-900 flex items-center uppercase rounded-md bg-gradient-to-r from-red-400 to-red-900'>
-                    <a href='pdf/YOUSSEF_BOUNOUACHA_CV.pdf' download>my resume</a>
+                    <a href='pdf/Youssef_BounouachaCV (eng).pdf' download>my resume</a>
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="download"
                         className="w-3 ml-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <path fill="currentColor"
