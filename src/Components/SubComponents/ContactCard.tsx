@@ -107,7 +107,7 @@ export default function ContactCard() {
 
     return (
         <Paper shadow="md" radius="lg">
-            <div className={classes.wrapper}>
+            <div className="flex bg-white dark:bg-[#0f0f0f] border border-gray-200 dark:border-[#222121] shadow-md shadow-gray-800 dark:shadow-gray-500 rounded-xl p-4 xs:flex-col">
                 <div className={classes.contacts}>
                     <Text size="lg" weight={700} className={classes.title} sx={{ color: '#fff' }}>
                         Contact information
