@@ -1,3 +1,4 @@
+import * as React from 'react';
 import {
     Paper,
     Text,
@@ -8,7 +9,9 @@ import {
     SimpleGrid,
     createStyles,
 } from '@mantine/core';
+import { useRef } from 'react';
 import { ContactIconsList } from './ContactIcons';
+import emailjs from '@emailjs/browser';
 
 
 
@@ -35,6 +38,7 @@ const useStyles = createStyles((theme) => {
             padding: theme.spacing.xl,
             paddingLeft: theme.spacing.xl * 2,
             borderLeft: 0,
+            color: theme.colorScheme === 'dark' ? theme.white : theme.black,
 
             [BREAKPOINT]: {
                 padding: theme.spacing.md,
@@ -42,9 +46,6 @@ const useStyles = createStyles((theme) => {
             },
         },
 
-        fields: {
-            marginTop: -12,
-        },
 
         fieldInput: {
             flex: 1,
@@ -72,7 +73,7 @@ const useStyles = createStyles((theme) => {
             position: 'relative',
             borderRadius: theme.radius.lg - 2,
             backgroundColor: theme.colors.red[7],
-            backgroundImage: 'images/bg.svg',
+            backgroundImage: `url(${'/images/bg.svg'})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             border: '1px solid transparent',
@@ -104,45 +105,137 @@ const useStyles = createStyles((theme) => {
 
 export default function ContactCard() {
     const { classes } = useStyles();
+    const [from_name, setName] = React.useState('');
+    const [email_id, setEmail] = React.useState('');
+    const [Subject, setSubject] = React.useState('');
+    const [message, setMessage] = React.useState('');
+    const [isLoading, setIsLoading] = React.useState(false);
+    const [isError, setIsError] = React.useState(false);
+    const [successMessage, setSuccessMessage] = React.useState('');
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        if (name === 'from_name') {
+            setName(value);
+        } else if (name === 'email_id') {
+            setEmail(value);
+        } else if (name === 'subject') {
+            setSubject(value);
+        } else if (name === 'message') {
+            setMessage(value);
+        }
+    };
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        setIsLoading(true);
+        setIsError(false);
+
+        emailjs.sendForm('service_e31lare', 'service_e31lare', event.target, 'n2Vx0_-_xZTdNYEVp')
+            .then((result) => {
+                setIsLoading(false);
+                setSuccessMessage('Your message was sent successfully');
+            })
+            .catch((error) => {
+                setIsLoading(false);
+                setIsError(true);
+                console.error(error);
+            });
+    };
 
     return (
         <Paper shadow="md" radius="lg">
-            <div className="flex bg-white dark:bg-[#0f0f0f] border border-gray-200 dark:border-[#222121] shadow-md shadow-gray-800 dark:shadow-gray-500 rounded-xl p-4 xs:flex-col">
-                <div className={classes.contacts}>
-                    <Text size="lg" weight={700} className={classes.title} sx={{ color: '#fff' }}>
-                        Contact information
-                    </Text>
+            <div className="flex flex-col md:flex-row bg-white dark:bg-[#0f0f0f] border border-gray-200 dark:border-[#222121] shadow-md shadow-gray-800 dark:shadow-gray-500 rounded-xl p-4 xs:flex-col">
+                <div className={classes.contacts} >
+                    <div className="bg-cover bg-center bg-no-repeat bg-[url('/images/bg.svg')]">
+                        <Text size="lg" weight={700} className={classes.title} sx={{ color: '#fff' }}>
+                            Contact information
+                        </Text>
 
-                    <ContactIconsList variant="white" />
+                        <ContactIconsList variant="white" />
+                    </div>
                 </div>
 
-                <form className={classes.form} onSubmit={(event) => event.preventDefault()}>
+                <form className="form box-border flex-1 px-10 md:px-4 py-8 md:pl-4 border-l-0 
+                     text-black dark:text-white md:py-4" onSubmit={(event) => event.preventDefault()}>
                     <Text size="lg" weight={700} className={classes.title}>
                         Get in touch
                     </Text>
 
-                    <div className={classes.fields}>
-                        <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-                            <TextInput label="Your name" placeholder="Your name" />
-                            <TextInput label="Your email" placeholder="your@email.com" required />
-                        </SimpleGrid>
+                    <div className='md:mt--12'  >
+                        <form onSubmit={handleSubmit}>
+                            {isError && <p>There was an error sending your message. Please try again later.</p>}
+                            {successMessage && <p>{successMessage}</p>}
+                            <div className="grid grid-cols-2 gap-4 sm:grid-cols-1">
+                                <div className="block text-sm font-medium text-black dark:text-white mb-1">
+                                    <div className='grid grid-cols-2  '>
+                                        <label htmlFor="name" className="block font-bold mb-3 mr-5">
+                                            Your name <span className='text-red-600'>*</span>
+                                            <input
+                                                id="name"
+                                                type="text"
+                                                placeholder="Your name"
+                                                required
+                                                name="from_name"
+                                                value={from_name}
+                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
+                                                onChange={handleChange}
+                                            />
+                                        </label>
 
-                        <TextInput mt="md" label="Subject" placeholder="Subject" required />
+                                        <label htmlFor="email" className="block font-bold mb-3">
+                                            Your email <span className='text-red-600'>*</span>
+                                            <input
+                                                id="email"
+                                                type="email"
+                                                placeholder="Your email"
+                                                required
+                                                name="email_id"
+                                                value={email_id}
+                                                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
+                                                onChange={handleChange}
+                                            />
+                                        </label>
+                                    </div>
 
-                        <Textarea
-                            mt="md"
-                            label="Your message"
-                            placeholder="Please include all relevant information"
-                            minRows={3}
-                        />
+                                    <label htmlFor="subject" className="block font-bold mb-3">
+                                        Subject <span className='text-red-600'>*</span>
+                                        <input
+                                            id="subject"
+                                            type="text"
+                                            placeholder="Subject"
+                                            required
+                                            name="subject"
+                                            value={Subject}
+                                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline"
+                                            onChange={handleChange}
+                                        />
+                                    </label>
 
-                        <Group position="right" mt="md">
-                            <a>
-                                <button className='group w-fit px-6 py-3 my-0 text-white mx-auto font-semibold hover:ring-2 ring-red-900 flex items-center uppercase rounded-md bg-gradient-to-r from-red-300 to-red-900'>
-                                    Send message
-                                </button>
-                            </a>
-                        </Group>
+                                    <label htmlFor="message" className="block font-bold mb-2">
+                                        Your message <span className='text-red-600'>*</span>
+                                        <textarea
+                                            id="message"
+                                            placeholder="Please include all relevant information"
+                                            required
+                                            name="message"
+                                            value={message}
+                                            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-white leading-tight focus:outline-none focus:shadow-outline h-32 resize-none overflow-y-auto"
+                                            onChange={handleChange}
+                                        />
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <Group position="right" mt="md">
+                                <a>
+                                    <button className='group w-fit px-6 py-3 my-0 text-white mx-auto font-semibold hover:ring-2 ring-red-900 flex items-center uppercase rounded-md bg-gradient-to-r from-red-300 to-red-900' type="submit">
+                                        Send message
+                                    </button>
+                                </a>
+                            </Group>
+                        </form>
                     </div>
                 </form>
             </div>
