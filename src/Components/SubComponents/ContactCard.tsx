@@ -108,20 +108,30 @@ const useStyles = createStyles((theme) => {
 
 export default function ContactCard() {
     const { classes } = useStyles();
-    const form = useRef();
+    const form = useRef(null);
 
-    const sendEmail = (e) => {
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_zakxska', 'template_zo6tihr', form.current, 'uBaZDk7Zt04HkBNTM')
-            .then((result) => {
-                console.log(result.text);
-                toast.success("Email sent successfully"); // show success toast notification
-            }, (error) => {
-                console.log(error.text);
-            });
+        if (form.current !== null) {
+            emailjs
+                .sendForm(
+                    "service_zakxska",
+                    "template_zo6tihr",
+                    form.current,
+                    "uBaZDk7Zt04HkBNTM"
+                )
+                .then(
+                    (result) => {
+                        console.log(result.text);
+                        toast.success("Email sent successfully");
+                    },
+                    (error) => {
+                        console.log(error.text);
+                    }
+                );
+        }
     };
-
     return (
         <div>
             <ToastContainer />
@@ -135,7 +145,7 @@ export default function ContactCard() {
                         <ContactIconsList variant="white" />
                     </div>
 
-                    <form className={classes.form} ref={form} onSubmit={sendEmail}>
+                    <form className={classes.form} ref={form} onSubmit={(e) => sendEmail(e)}>
                         <Text size="lg" weight={700} className={classes.title}>
                             Get in touch
                         </Text>
