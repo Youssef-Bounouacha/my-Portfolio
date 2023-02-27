@@ -114,24 +114,24 @@ export default function Header({ }: Props) {
                                 initial={{ x: 1000, opacity: 0, scale: 0.5, }}
                                 animate={{ x: 0, opacity: 1, scale: 1, }}
                                 transition={{ duration: 1.5, }}
-                                className="px-40 text-center items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
+                                className="px-30 text-center items-center justify-center space-y-8 md:flex md:space-x-3 md:space-y-0">
                                 {renderThemeChanger()}
-                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900" >
+                                <li className="text-gray p-1 rounded-lg hover:text-red-700 hover:ring-2 ring-red-700" >
                                     <a href="#about">
                                         About
                                     </a>
                                 </li>
-                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900 ">
+                                <li className="text-gray p-1 rounded-lg hover:text-red-700 hover:ring-2 ring-red-700 ">
                                     <a href="#skills">
                                         Skills
                                     </a>
                                 </li>
-                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900">
+                                <li className="text-gray p-1 rounded-lg hover:text-red-700 hover:ring-2 ring-red-700">
                                     <a href="#projects">
                                         Projects
                                     </a>
                                 </li>
-                                <li className="text-gray p-1 rounded-lg hover:text-red-900 hover:ring-2 ring-red-900">
+                                <li className="text-gray p-1 rounded-lg hover:text-red-700 hover:ring-2 ring-red-700">
                                     <a href="#contact">
                                         Contact
                                     </a>

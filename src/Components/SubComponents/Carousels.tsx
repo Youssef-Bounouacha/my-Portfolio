@@ -4,6 +4,7 @@ import { useMediaQuery } from '@mantine/hooks';
 import { createStyles, Paper, Text, Title, Button, useMantineTheme } from '@mantine/core';
 import Link from 'next/link';
 import ComingSoon from '../ComingSoon';
+import { Navigate } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -71,7 +72,7 @@ function Card({ image, title, category, href }: CardProps) {
           {title}
         </Title>
       </div>
-      <a href={href}>
+      <a href={href} onClick={navigate}>
         <button className='group w-fit px-6 py-3 my-0 text-white mx-auto font-semibold hover:ring-2 ring-white flex items-center uppercase rounded-md bg-gradient-to-r from-red-300 to-red-900'>
           View Project
         </button>
@@ -83,31 +84,31 @@ function Card({ image, title, category, href }: CardProps) {
 const data = [
   {
     image:
-      'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
+      'images/amiza1.png',
     title: 'Responsive Website for a construction company',
     category: 'Web site',
-    href: 'https://www.google.com',
+    href: 'https://github.com/Youssef-Bounouacha/Construction-Website-Project',
   },
   {
     image:
       'images/man-developing-website-on-desk.png',
     title: 'Coming Soon..',
     category: 'Coding',
-    href: '#comingSoon',
+    href: `url(${'/components/ComingSoon'})`,
   },
   {
     image:
       'images/man-developing-website-on-desk.png',
     title: 'Coming Soon..',
     category: 'Coding',
-    href: 'hmm',
+    href: `url(${'/components/ComingSoon'})`,
   },
   {
     image:
       'images/man-developing-website-on-desk.png',
     title: 'Coming Soon..',
     category: 'Coding',
-    href: 'hmm',
+    href: `url(${'/components/ComingSoon'})`,
   },
 ];
 
