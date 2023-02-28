@@ -13,14 +13,17 @@ const useStyles = createStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    backgroundColor: theme.colors.dark[7],
-    backgroundSize: 'cover',
+    backgroundColor: '#0f0f0f',
+    boxShadow: '0 10px 10px rgba(0, 0, 0, 1)',
+    backgroundSize: '100%',
+    backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
   },
 
   title: {
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 900,
+    textShadow: '0 0 10px rgba(0, 0, 0, 5)',
     color: theme.white,
     lineHeight: 1.2,
     fontSize: 32,
@@ -30,6 +33,7 @@ const useStyles = createStyles((theme) => ({
   category: {
     color: theme.white,
     fontWeight: 600,
+    textShadow: '0 0 10px rgba(0, 0, 0, 5)',
     textTransform: 'uppercase',
   },
 }));
@@ -73,7 +77,7 @@ function Card({ image, title, category, href }: CardProps) {
         </Title>
       </div>
       <a href={href} onClick={navigate}>
-        <button className='group w-fit px-6 py-3 my-0 text-white mx-auto font-semibold hover:ring-2 ring-white flex items-center uppercase rounded-md bg-gradient-to-r from-red-300 to-red-900'>
+        <button className='group w-fit px-6 py-3 my-0  text-white content-center font-semibold hover:ring-2 ring-white flex uppercase rounded-md bg-gradient-to-r from-red-300 to-red-900'>
           View Project
         </button>
       </a>
@@ -84,7 +88,7 @@ function Card({ image, title, category, href }: CardProps) {
 const data = [
   {
     image:
-      'images/amiza1.png',
+      'images/amizalogo1.jpg',
     title: 'Responsive Website for a construction company',
     category: 'Web site',
     href: 'https://github.com/Youssef-Bounouacha/Construction-Website-Project',
