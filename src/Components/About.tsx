@@ -19,7 +19,7 @@ export default function About({ }: Props) {
                     x: 0,
                     opacity: 1,
                 }}
-                src='https://avatars.githubusercontent.com/u/51406125?v=4'
+                src='/images/pdp.jpg'
                 className='mt-24 md:mt-0 md:mb-18 flex-shrink-0 w-64 h-64 rounded-full object-top object-cover md:rounded-t-xl md:rounded-b-xl md:h-[320px] md:w-64 '
             />
             <div className='flex flex-col px-0 md:mb-0 -mt-3 md:mt-16 md:px-5 '>
