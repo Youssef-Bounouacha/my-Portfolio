@@ -16,32 +16,32 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <ThemeProvider attribute='class'>
-      <div className='bg-[#f0f0f0] dark:bg-[#0f0f0f]  h-screen snap-y  overflow-scroll z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-red-900/80'>
+      <div className='bg-[#f0f0f0] dark:bg-[#0f0f0f]  h-screen snap-y md:snap-mandatory  overflow-scroll z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-red-900/80'>
         {/*Header*/}
         <Header />
 
         {/*Hero*/}
-        <section id="hero">
+        <section id="hero" className='md:snap-start select-none'>
           <Hero />
         </section>
 
         {/*About*/}
-        <section id="about">
+        <section id="about" className='md:snap-start select-none'>
           <About />
         </section>
 
         {/*Skills*/}
-        <section id="skills">
+        <section id="skills" className='md:snap-start select-none'>
           <Skills />
         </section>
 
         {/*Project*/}
-        <section id="projects">
+        <section id="projects" className='md:snap-start select-none'>
           <Project />
         </section>
 
         {/*Contact*/}
-        <section id='contact'>
+        <section id='contact' className='md:snap-start select-none'>
           <Contact />
         </section>
       </div>
