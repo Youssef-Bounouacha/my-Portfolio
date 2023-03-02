@@ -153,7 +153,7 @@ export default function ContactCard() {
                         <div className={classes.fields}>
                             <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
                                 <TextInput type="text" name="from_name" label="Your name" placeholder="Your name" required />
-                                <TextInput type="email" name="email_id" label="Your email" placeholder="hello@mantine.dev" required />
+                                <TextInput type="email" name="email_id" label="Your email" placeholder="your@email.com" required />
                             </SimpleGrid>
 
                             <TextInput mt="md" label="Subject" placeholder="Subject" required />
