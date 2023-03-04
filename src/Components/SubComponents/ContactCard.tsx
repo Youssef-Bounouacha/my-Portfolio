@@ -22,7 +22,7 @@ const useStyles = createStyles((theme) => {
     return {
         wrapper: {
             display: 'flex',
-            backgroundColor: 'light' ? 'bg-white' : 'bg-[#0f0f0f]',
+            backgroundColor: theme.colorScheme === 'light' ?  theme.colors.gray[0] : theme.colors.dark[7] ,
             borderRadius: theme.radius.lg,
             padding: 4,
             border: `1px solid ${theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[2]
@@ -156,8 +156,8 @@ export default function ContactCard() {
                                 <TextInput type="email" name="email_id" label="Your email" placeholder="your@email.com" required />
                             </SimpleGrid>
 
-                            <TextInput mt="md" label="Subject" placeholder="Subject" required />
-
+                            <TextInput type="text" name="subject" mt="md" label="Subject" placeholder="Subject" required />
+ 
                             <Textarea
                                 mt="md"
                                 label="Your message"
