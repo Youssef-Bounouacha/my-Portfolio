@@ -10,7 +10,7 @@ export default function Project({ }: Props) {
             <h3 className='absolute top-24 tracking-[12px] uppercase text-xl md:text-2xl z=10'>
                 Projects
             </h3>
-            <div className='w-full px-10'>
+            <div className='w-full px-10 mt-[20%]'>
                 <Carousels />
             </div>
         </div>

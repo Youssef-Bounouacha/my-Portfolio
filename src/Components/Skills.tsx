@@ -87,11 +87,11 @@ export default function Skills({ }: Props) {
             <h4 className='absolute top-40 md:top-40 tracking-[3px] z=10 uppercase text-xl md:text-2xl font-semibold md:mb-2'>
                 These are the technologies I&rsquo;ve worked with
             </h4>
-            <div className='w-full grid grid-cols-4 md:text-lg text-[10px] sm:grid-cols-4 gap-8 text-center py-8 mt-20  sm:px-0'>
+            <div className='w-full grid grid-cols-4 md:text-lg text-[10px] sm:grid-cols-4 md:gap-8 gap-6 text-center py-8 sm:px-0 mt-[22%]'>
                 {
                     skill.map(({ id, src, title, style }) => (
-                        <div key={id} className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style}`}>
-                            <Image src={src} alt='skills' width={80} height={80} className='mx-auto' />
+                        <div key={id} className={`shadow-md hover:scale-110 duration-500 py-2 rounded-lg ${style}`}>
+                            <Image src={src} alt='skills' width={70} height={70} className='mx-auto' />
                             <p className='mt-4'>{title}</p>
                         </div>
 

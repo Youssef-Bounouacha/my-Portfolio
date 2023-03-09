@@ -8,7 +8,6 @@ import About from '@/Components/About';
 import Skills from '@/Components/Skills';
 import Project from '@/Components/Project';
 import Contact from '@/Components/Contact';
-import ComingSoon from '@/Components/ComingSoon';
 
 
 const inter = Inter({ subsets: ['latin'] })
