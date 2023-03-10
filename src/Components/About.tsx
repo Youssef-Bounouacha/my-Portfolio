@@ -6,7 +6,7 @@ type Props = {}
 export default function About({ }: Props) {
     return (
         <div className='flex flex-col relative h-screen md:space-x-10 text-center md:text-left md:flex-row max-w-4xl mx-auto px-10 justify-evenly items-center'>
-            <h3 className='absolute top-20 md:top-24 mb-64 uppercase tracking-[12px] text-gray text-xl md:text-2xl'>About</h3>
+            <h3 className='absolute top-20 md:top-24  mb-64 uppercase tracking-[12px] text-gray text-xl md:text-2xl'>About</h3>
             <motion.img
                 initial={{
                     x: -300,
@@ -20,7 +20,7 @@ export default function About({ }: Props) {
                     opacity: 1,
                 }}
                 src='/images/pdp.jpg'
-                className='mt-24 md:mt-[10%] md:mb-18 flex-shrink-0 h-56 w-56 rounded-full object-top object-cover md:rounded-t-xl md:rounded-b-xl md:h-[320px] md:w-64'
+                className='mt-[50%] md:mt-[10%] md:mb-18 flex-shrink-0 h-56 w-56 rounded-full object-top object-cover md:rounded-t-xl md:rounded-b-xl md:h-[320px] md:w-64'
             />
             <div className='flex flex-col  md:mb-0  md:mt-[20%] md:px-5 '>
                 <h4 className='uppercase text-xl md:text-2xl font-semibold md:mb-2'>Let me introduce <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-900'>myself</span></h4>
