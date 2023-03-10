@@ -85,7 +85,7 @@ export default function ContactCard() {
                             </div>
                             <input type="text" name="subject" className='block w-full mt-4 py-2 px-4 rounded-lg shadow-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-transparent  dark:text-white dark:bg-[#0f0f0f] bg-[#f0f0f0]' placeholder="Subject" required />
                             <textarea name="message" className='block w-full mt-4 py-2 px-4 rounded-lg shadow-md border-gray-300 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white focus:border-transparent  dark:text-white dark:bg-[#0f0f0f] bg-[#f0f0f0] resize-none' placeholder="Please include all relevant information" rows={3} required />
-                            <Group className="md:float-right mt-4 md:mt-8">
+                            <Group className="md:float-right mt-2 md:mt-8">
                                 <a>
                                     <button className='group w-fit px-6 py-3 my-0 text-white font-semibold hover:ring-2 dark:ring-white ring-black hover:scale-105 duration-500 uppercase rounded-md bg-gradient-to-r from-red-300 to-red-900' type="submit" value="Send" >
                                         Send message
