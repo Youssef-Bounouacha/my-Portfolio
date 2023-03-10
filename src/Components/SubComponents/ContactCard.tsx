@@ -2,14 +2,8 @@ import * as React from 'react';
 import {
     Paper,
     Text,
-    TextInput,
-    Textarea,
-    Button,
     Group,
-    SimpleGrid,
     createStyles,
-    useMantineTheme,
-    MantineProvider,
 } from '@mantine/core';
 import { useRef } from 'react';
 import { ContactIconsList } from './ContactIcons';
@@ -22,7 +16,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const useStyles = createStyles((theme) => {
     const BREAKPOINT = theme.fn.smallerThan('sm');
-
     return {
         title: {
             marginBottom: theme.spacing.xl * 1.5,
@@ -32,18 +25,12 @@ const useStyles = createStyles((theme) => {
                 marginBottom: theme.spacing.xl,
             },
         },
-
-        control: {
-            [BREAKPOINT]: {
-                flex: 1,
-            },
-        },
     };
 });
 
 export default function ContactCard() {
     const { classes } = useStyles();
-    const form = useRef(null);
+    const form = useRef<HTMLFormElement>(null);
 
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -60,6 +47,10 @@ export default function ContactCard() {
                     (result) => {
                         console.log(result.text);
                         toast.success("Email sent successfully");
+                        if (form.current !== null) {
+                            // Clear the form inputs after submitting the form
+                            form.current.reset();
+                        }
                     },
                     (error) => {
                         console.log(error.text);
