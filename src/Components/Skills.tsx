@@ -49,33 +49,45 @@ export default function Skills({ }: Props) {
         },
         {
             id: 8,
-            src: '/images/skills/vite.png',
-            title: 'VITE',
-            style: 'shadow-purple-500',
-        },
-        {
-            id: 9,
-            src: '/images/skills/git.png',
-            title: 'GIT',
-            style: 'shadow-red-500',
-        },
-        {
-            id: 10,
-            src: '/images/skills/github.png',
-            title: 'GitHub',
-            style: 'shadow-gray-600',
-        },
-        {
-            id: 11,
             src: '/images/skills/materialui.png',
             title: 'Material UI',
             style: 'shadow-blue-500',
         },
         {
-            id: 12,
+            id: 9,
             src: '/images/skills/mantineui.png',
             title: 'Mantine UI',
             style: 'shadow-sky-400',
+        },
+        {
+            id: 10,
+            src: '/images/skills/vite.png',
+            title: 'VITE',
+            style: 'shadow-purple-500',
+        },
+        {
+            id: 11,
+            src: '/images/skills/flutter.png',
+            title: 'Flutter',
+            style: 'shadow-sky-400',
+        },
+        {
+            id: 12,
+            src: '/images/skills/Dart.png',
+            title: 'Dart',
+            style: 'shadow-sky-400',
+        },
+        {
+            id: 13,
+            src: '/images/skills/git.png',
+            title: 'GIT',
+            style: 'shadow-red-500',
+        },
+        {
+            id: 14,
+            src: '/images/skills/github.png',
+            title: 'GitHub',
+            style: 'shadow-gray-600',
         },
     ]
     return (
@@ -87,7 +99,7 @@ export default function Skills({ }: Props) {
             <h4 className='absolute top-40 md:top-40 tracking-[3px] z=10 uppercase text-xl md:text-2xl font-semibold md:mb-2'>
                 These are the technologies I&rsquo;ve worked with
             </h4>
-            <div className='w-full grid grid-cols-4 md:text-lg text-[10px] sm:grid-cols-4 md:gap-8 gap-6 text-center py-8 sm:px-0 md:mt-[22%]  mt-[50%] '>
+            <div className='w-full grid grid-cols-4 md:text-lg text-[10px] sm:grid-cols-5 md:gap-8 gap-6 text-center py-8 sm:px-0 md:mt-[22%]  mt-[50%] '>
                 {
                     skill.map(({ id, src, title, style }) => (
                         <div key={id} className={`shadow-md hover:scale-110 duration-500 py-2 rounded-lg ${style}`}>
