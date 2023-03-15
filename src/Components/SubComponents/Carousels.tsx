@@ -15,7 +15,7 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'flex-start',
     backgroundColor: '#0f0f0f',
     boxShadow: '0 10px 10px rgba(0, 0, 0, 1)',
-    backgroundSize: '100%',
+    backgroundSize: '80%',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
   },
@@ -24,7 +24,7 @@ const useStyles = createStyles((theme) => ({
     fontFamily: `Greycliff CF, ${theme.fontFamily}`,
     fontWeight: 900,
     textShadow: '0 0 10px rgba(0, 0, 0, 5)',
-    color: theme.white,
+    color: theme.colors.gray[0],
     lineHeight: 1.2,
     fontSize: 32,
     marginTop: theme.spacing.xs,
@@ -88,7 +88,7 @@ function Card({ image, title, category, href }: CardProps) {
 const data = [
   {
     image:
-      'images/amizalogo1.jpg',
+      'images/amizaweb1.png',
     title: 'Responsive Website for a construction company',
     category: 'Web site',
     href: 'https://github.com/Youssef-Bounouacha/Construction-Website-Project',
