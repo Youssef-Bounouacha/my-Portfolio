@@ -90,15 +90,15 @@ const data = [
     image:
       'images/amizaweb1.png',
     title: 'Responsive Website for a construction company',
-    category: 'Web site',
+    category: 'Web Site',
     href: 'https://github.com/Youssef-Bounouacha/Construction-Website-Project',
   },
   {
     image:
-      'images/man-developing-website-on-desk.png',
-    title: 'Coming Soon..',
-    category: 'Coding',
-    href: `url(${'/components/ComingSoon'})`,
+      'images/flutter_app1.png',
+    title: 'Task management mobile app',
+    category: 'Mobile App',
+    href: 'https://github.com/Youssef-Bounouacha/To_Do_List',
   },
   {
     image:
