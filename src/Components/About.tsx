@@ -25,7 +25,7 @@ export default function About({ }: Props) {
             <div className='flex flex-col  md:mb-0  md:mt-[20%] md:px-5 '>
                 <h4 className='uppercase text-xl md:text-2xl font-semibold md:mb-2'>Let me introduce <span className='text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-red-900'>myself</span></h4>
                 <p className='md:text-base text-xs font-semibold leading-relaxed tracking-wide text-justify mb-1'>
-                    Hi, my name is Youssef Bounouacha and I am a 24-year-old software engineer from Tangier, Morocco.
+                    Hi, my name is Youssef Bounouacha and I am a 25-year-old software engineer from Tangier, Morocco.
                     I am passionate about the world of technology and take great pride in my work as a software engineer.
                     My love for video games has also driven my interest in the field and fueled my motivation to continuously
                     improve and stay up-to-date with the latest advancements.<br />
