@@ -33,7 +33,7 @@ export default function Skills({ }: Props) {
             id: 5,
             src: '/images/skills/php.png',
             title: 'Php',
-            style: 'shadow-purple-600',
+            style: 'shadow-purple-400',
         },
         {
             id: 6,
@@ -87,34 +87,40 @@ export default function Skills({ }: Props) {
             id: 14,
             src: '/images/skills/vite.png',
             title: 'VITE',
-            style: 'shadow-purple-500',
+            style: 'shadow-pink-400',
         },
         {
             id: 15,
+            src: '/images/skills/redux.png',
+            title: 'redux',
+            style: 'shadow-purple-500',
+        },
+        {
+            id: 16,
             src: '/images/skills/react.png',
             title: 'React Native',
             style: 'shadow-sky-600',
         },
         {
-            id: 16,
+            id: 17,
             src: '/images/skills/flutter.png',
             title: 'Flutter',
             style: 'shadow-sky-400',
         },
         {
-            id: 17,
+            id: 18,
             src: '/images/skills/Dart.png',
             title: 'Dart',
             style: 'shadow-sky-400',
         },
         {
-            id: 18,
+            id: 19,
             src: '/images/skills/git.png',
             title: 'GIT',
             style: 'shadow-red-500',
         },
         {
-            id: 19,
+            id: 20,
             src: '/images/skills/github.png',
             title: 'GitHub',
             style: 'shadow-gray-600',
@@ -124,10 +130,11 @@ export default function Skills({ }: Props) {
     return (
 
         <div className=' md:px-10 min-h-screen  flex flex-col relative h-screen md:space-x-10 text-center md:text-left md:flex-row max-w-4xl mx-auto px-10 justify-evenly items-center'>
-            <h3 className='absolute top-24 tracking-[12px] uppercase text-xl md:text-2xl z=10'>
+
+            <h3 className='absolute top-10 md:top-24 tracking-[12px] uppercase text-xl md:text-2xl z=10'>
                 skills
             </h3>
-            <h4 className='absolute top-40 md:top-40 tracking-[3px] z=10 uppercase text-xl md:text-2xl font-semibold md:mb-2'>
+            <h4 className='absolute top-24 md:top-60 tracking-[3px] z=10 uppercase text-xl md:text-2xl font-semibold md:mb-2'>
                 These are the technologies I&rsquo;ve worked with
             </h4>
             <div className='w-full grid grid-cols-4 md:text-lg text-[10px] sm:grid-cols-5 md:gap-8 gap-6 text-center py-8 sm:px-0 md:mt-[22%] mt-[60%] '>
